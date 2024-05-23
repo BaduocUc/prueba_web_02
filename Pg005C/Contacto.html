@@ -1,0 +1,31 @@
+<header>
+  <h1>Formulario de Contacto</h1>
+</header>
+<div class="container-lg">
+  <div class="card border-0 shadow my-2 bg-light border-info mb-3" style="width: 50%; margin: 0 auto 10px;">
+    <div class="card-body">
+      <form id="formularioAdopcion">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" required>
+
+        <label for="correo">Correo electrónico:</label>
+        <input type="email" id="correo" name="correo" required>
+
+        <label for="telefono">Teléfono:</label>
+        <input type="tel" id="telefono" name="telefono" pattern="[0-9]{9,}" required>
+
+        <label for="comentario">Mensaje:</label>
+        <textarea id="comentario" name="comentario" required></textarea>
+
+        <input type="submit" value="Enviar">
+      </form>
+      
+      <div id="mensajeRegistro" style="display: none;">
+        <p>Gracias por contactarnos</p>
+        <p>Nos comunicaremos con usted a la brevedad.</p>
+        <p>Será redirigido automáticamente al menú principal en unos segundos.</p>
+        <p>Si no es redirigido automáticamente, puede hacer clic <a href="Index.html">aquí</a>.</p>
+      </div>
+    </div>
+  </div>
+</div>
