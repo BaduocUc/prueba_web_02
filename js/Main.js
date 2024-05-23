@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', function () {
         })
         .catch(error => {
           console.error('Error al cargar la página:', error);
-          contentDiv.innerHTML = '<p>Lo siento, ha ocurrido un error al cargar la página.</p>';
+          contentDiv.innerHTML = '<p>Lo siento, ha ocurrido un error al cargar la página. Asegurese de usar la extencion Live Server de VS Code</p>';
         });
     }
   
