@@ -115,3 +115,32 @@ document.addEventListener('DOMContentLoaded', function () {
     assignContactFormEvent();
   });
   
+  
+  
+  
+
+  <><script
+  
+  integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+  crossorigin="anonymous"></script><script src="products_api.js"></script></>
+  $(document).ready(function() {
+    $.get('https://my-json-server.typicode.com/BaduocUc/prueba_web_02/products', function(data) {
+        const container = $('#products-container');
+        data.forEach(product => {
+            const productDiv = $('<div>').addClass('product');
+
+            const img = $('<img>').attr('src', product.image);
+
+            const h3 = $('<h3>').text(product.name);
+
+            const p = $('<p>').text(product.description);
+
+            const button = $('<button>').text('Añadir al carrito');
+
+            productDiv.append(img, h3, p, button);
+            container.append(productDiv);
+        });
+    }).fail(function() {
+        console.error('Error al cargar los productos');
+    });
+})
