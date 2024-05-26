@@ -34,11 +34,132 @@ document.addEventListener('DOMContentLoaded', function () {
         if (page === 'Pg004D/Donaciones.html') {
           loadFoundations();
         }
+        // Cargar datos dinámicos si es la página de tienda
+        if (page === 'Pg005T/Tienda.html') {
+          loadCategories();
+        }
       })
       .catch(error => {
         console.error('Error al cargar la página:', error);
         contentDiv.innerHTML = '<p>Lo siento, ha ocurrido un error al cargar la página. Asegúrese de usar la extensión Live Server de VS Code</p>';
       });
+  }
+
+  // Función para cargar las categorías
+  function loadCategories() {
+    fetch('data/db.json')
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Error al cargar los datos de las categorías');
+        }
+        return response.json();
+      })
+      .then(data => {
+        const categories = [...new Set(data.products.map(product => product.category))];
+        const categoryList = document.getElementById('category-list');
+        categoryList.innerHTML = ''; // Limpiar el contenedor antes de agregar nuevo contenido
+        categories.forEach(category => {
+          const categoryItem = `<li class="nav-item"><a class="nav-link" href="#" data-category="${category}">${category}</a></li>`;
+          categoryList.innerHTML += categoryItem;
+        });
+
+        // Asignar eventos a las categorías
+        assignCategoryEvents();
+      })
+      .catch(error => {
+        console.error('Error al cargar los datos de las categorías:', error);
+      });
+  }
+
+  // Función para cargar los productos de una categoría
+  function loadProducts(category) {
+    fetch('data/db.json')
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Error al cargar los datos de los productos');
+        }
+        return response.json();
+      })
+      .then(data => {
+        const productContainer = document.getElementById('product-container');
+        productContainer.innerHTML = ''; // Limpiar el contenedor antes de agregar nuevo contenido
+        data.products
+          .filter(product => product.category === category)
+          .forEach(product => {
+            const productCard = `
+              <div class="col-md-4 mb-4">
+                <div class="card">
+                  <img src="${product.image}" alt="${product.name}" class="card-img-top">
+                  <div class="card-body">
+                    <h5 class="card-title">${product.name}</h5>
+                    <p class="card-text">${product.description}</p>
+                    <button class="btn btn-primary" data-id="${product.id}">Ver Detalles</button>
+                  </div>
+                </div>
+              </div>
+            `;
+            productContainer.innerHTML += productCard;
+          });
+
+        // Asignar eventos a los botones de "Ver Detalles"
+        assignProductEvents();
+      })
+      .catch(error => {
+        console.error('Error al cargar los datos de los productos:', error);
+      });
+  }
+
+  // Función para mostrar los detalles de un producto
+  function showProductDetails(productId) {
+    fetch('data/db.json')
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Error al cargar los datos del producto');
+        }
+        return response.json();
+      })
+      .then(data => {
+        const product = data.products.find(p => p.id === parseInt(productId));
+        if (product) {
+          document.getElementById('product-name').textContent = product.name;
+          document.getElementById('product-image').src = product.image;
+          document.getElementById('product-image').alt = product.name;
+          document.getElementById('product-description').textContent = product.description;
+          document.getElementById('product-details').style.display = 'block';
+          document.getElementById('product-container').style.display = 'none';
+        }
+      })
+      .catch(error => {
+        console.error('Error al cargar los datos del producto:', error);
+      });
+  }
+
+  // Función para asignar eventos a las categorías
+  function assignCategoryEvents() {
+    const categoryLinks = document.querySelectorAll('#category-list .nav-link');
+    categoryLinks.forEach(link => {
+      link.addEventListener('click', function (event) {
+        event.preventDefault();
+        const category = this.getAttribute('data-category');
+        loadProducts(category);
+      });
+    });
+  }
+
+  // Función para asignar eventos a los productos
+  function assignProductEvents() {
+    const productButtons = document.querySelectorAll('.btn-primary[data-id]');
+    productButtons.forEach(button => {
+      button.addEventListener('click', function () {
+        const productId = this.getAttribute('data-id');
+        showProductDetails(productId);
+      });
+    });
+
+    document.getElementById('back-to-products').addEventListener('click', function () {
+      document.getElementById('product-details').style.display = 'none';
+      document.getElementById('product-container').style.display = 'block';
+    });
   }
 
   // Función para cargar los datos de las fundaciones
