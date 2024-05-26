@@ -57,7 +57,7 @@ document.addEventListener('DOMContentLoaded', function () {
           const foundationCard = `
             <div class="col-md-4 mb-4">
               <div class="gallery-item">
-                <img src="${foundation.image}" alt="${foundation.name}" class="img-fluid gallery-img" data-description="${foundation.description}" data-link="${foundation.link}">
+                <img src="${foundation.image}" alt="${foundation.name}" class="img-fluid gallery-img uniform-img" data-description="${foundation.description}" data-link="${foundation.link}">
               </div>
             </div>
           `;
