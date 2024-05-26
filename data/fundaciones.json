@@ -31,6 +31,46 @@
             "description":"Nuestro propósito es ayudar a los animales a recuperarse de sus vidas anteriores y encontrarles un hogar definitivo o en otros casos, volver a su hábitat natural.",
             "link":"https://asanimalista.org"
 
+        },
+        {
+            "id": 5,
+            "image":"../assets/Donaciones/chilemestizo.png",
+            "name":"Fundación Chile Mestizo",
+            "description":"Somos personas preocupadas del bienestar animal, especialmente de perros, con años de experiencia en rescate rehabilitación y adopción.",
+            "link":"https://chilemestizo.cl/"
+
+        },
+        {
+            "id": 6,
+            "image":"",
+            "name":"",
+            "description":"",
+            "link":""
+
+        },
+        {
+            "id": 7,
+            "image":"",
+            "name":"",
+            "description":"",
+            "link":""
+
+        },
+        {
+            "id": 8,
+            "image":"",
+            "name":"",
+            "description":"",
+            "link":""
+
+        },
+        {
+            "id": 9,
+            "image":"",
+            "name":"",
+            "description":"",
+            "link":""
+
         }
 
 
