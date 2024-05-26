@@ -1,0 +1,38 @@
+{
+    "foundations":[
+        {
+            "id": 1,
+            "image":"../assets/Donaciones/Garras&Patitas.png",
+            "name":"Garras&Patitas",
+            "description":"Contribuir a la solución del problema de la sobre población de mascotas abandonadas que afecta a toda nuestra comunidad.",
+            "link":"https://www.garrasypatas.cl/"
+
+        },
+        {
+            "id": 2,
+            "image":"../assets/Donaciones/Arca.png",
+            "name":"Fundacion Arca",
+            "description":"Contribuir en la protección y el fomento del bienestar animal y la tenencia responsable, trabajando codo a codo con la ciudadanía, adultos mayores y niños, en distintas esferas de desarrollo, promoviendo la convivencia humana – animal, la empatía interespecie y el cuidado de todos los seres vivos.",
+            "link":"https://fundacionarca.cl/"
+
+        },
+        {
+            "id": 3,
+            "image":"../assets/Donaciones/Fundacion Huella Animal.png",
+            "name":"Fundación Huella Animal",
+            "description":"Dar solución a la problemática de Bienestar Animal y Tenencia Responsable de Mascotas y Animales de Compañía en Chile. Hoy en día hemos crecido mucho como equipo y nos hemos formado en distintas áreas para hacer del mundo un lugar mejor para los animales.",
+            "link":"https://fundacionhuellaanimal.cl/"
+
+        },
+        {
+            "id": 4,
+            "image":"../assets/Donaciones/ASA Animalista.png",
+            "name":"ASA Animalista",
+            "description":"Nuestro propósito es ayudar a los animales a recuperarse de sus vidas anteriores y encontrarles un hogar definitivo o en otros casos, volver a su hábitat natural.",
+            "link":"https://asanimalista.org"
+
+        }
+
+
+    ]
+}
