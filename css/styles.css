@@ -84,13 +84,12 @@ footer {
 .creador img {
   display: block;
   margin: 0 auto 10px;
-  border-radius: 50%;
-  width: 100px;
-  height: 100px;
+  width: 150px; /* Ajusta el tamaño según sea necesario */
+  height: auto;
 }
 
 .creador p {
-  margin: 0;
+  margin: 10px 0;
 }
 
 h1 {
@@ -179,5 +178,11 @@ header {
   width: 100%;
   height: auto;
   max-height: 400px; /* Ajusta este valor según sea necesario */
+  object-fit: cover;
+}
+
+.uniform-img {
+  width: 90%;
+  height: 700px; /* Ajusta esta altura según sea necesario */
   object-fit: cover;
 }
