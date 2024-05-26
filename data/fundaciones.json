@@ -42,34 +42,34 @@
         },
         {
             "id": 6,
-            "image":"",
-            "name":"",
-            "description":"",
-            "link":""
+            "image":"../assets/Donaciones/Fundacion Julieta.webp",
+            "name":"Fundacion Julieta",
+            "description":"Somos una organización sin fines de lucro dedicada al rescate y adopción de perritos y gatitos en situación de calle o abandono. Nuestra misión es ayudar a mejorar la calidad de vida de estos animales y encontrarles hogares amorosos.",
+            "link":"https://fundacionjulieta.cl/"
 
         },
         {
             "id": 7,
-            "image":"",
-            "name":"",
-            "description":"",
-            "link":""
+            "image":"../assets/Donaciones/corporacion mirada animal chile.png",
+            "name":"Corporacion Mirada Animal Chile",
+            "description":"Llevamos más de 9 años encontrándole una familia a perritos sin hogar. ",
+            "link":"https://ayuda.miradaanimal.cl/"
 
         },
         {
             "id": 8,
-            "image":"",
-            "name":"",
-            "description":"",
-            "link":""
+            "image":"../assets/Donaciones/Unión de Amigos de los Animales.png",
+            "name":"Unión de Amigos de los Animales",
+            "description":"La Unión de Amigos de los Animales (UAA), es una Corporación sin fines de lucro fundada el 12 de junio de 1955. Desde esos años, nuestro objetivo ha sido proteger a los animales en situaciones de abandono y maltrato, no distinguiendo razas ni tamaños.",
+            "link":"https://uniondeamigosdelosanimales.cl/"
 
         },
         {
             "id": 9,
-            "image":"",
-            "name":"",
-            "description":"",
-            "link":""
+            "image":"../assets/Donaciones/Fundación Ayudando Peluditos Chile.jpg",
+            "name":"Fundación Ayudando Peluditos Chile",
+            "description":"Ayudando Peluditos Chile es una agrupación creada el año 2013 constituida por 9 integrantes, cuya finalidad es el rescate de animales en situación de riesgo, su tratamiento y la reinserción en nuevas familias. Esta inquietud surgió con el fin de poder contribuir a satisfacer la necesidad de los callejeros, la cual es inmensa; abandono, hambre, enfermedades, malos tratos de personas y una gran falta de cultura hacia el cuidado animal.",
+            "link":"https://www.facebook.com/AyudandoPeluditosChile/"
 
         }
 
