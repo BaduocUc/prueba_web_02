@@ -71,6 +71,7 @@ body {
 }
 
 .uniform-size {
+  height: 200px;
   max-height: 500px; /* Ajusta esta altura según sea necesario */
   width: auto;
 }
@@ -183,7 +184,6 @@ header {
 
 .uniform-img {
   width: 90%;
-  min-height: 700px;
   height: 80%; /* Ajusta esta altura según sea necesario */
   object-fit: cover;
 }
