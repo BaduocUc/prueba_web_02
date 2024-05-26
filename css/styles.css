@@ -1,3 +1,23 @@
+/* Estilos para validación de formularios */
+.was-validated .form-control:invalid, .was-validated .form-control:invalid:focus {
+  border-color: #dc3545;
+  box-shadow: none;
+}
+
+.was-validated .form-control:valid, .was-validated .form-control:valid:focus {
+  border-color: #28a745;
+  box-shadow: none;
+}
+
+.form-control:invalid ~ small {
+  color: #dc3545;
+}
+
+input[type="submit"]:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
 body {
   background-image: url("../assets/Index/fondo.png");
   background-color: rgb(255, 254, 204);
@@ -34,22 +54,25 @@ body {
   background-color: rgb(0, 130, 190);
 }
 
-.container-lg .card {
-  background-color: whitesmoke;
-  max-width: 80%;
-  min-height: 585px;
-  border-radius: 10px;
-  margin: 20px auto; /* Centrando las tarjetas y dando espacio alrededor */
+.gallery-item {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
 }
 
-.card-img-top {
-  display: block;
+.gallery-img {
   width: 100%;
-  max-height: 300px;
+  height: auto;
+  transition: transform 0.3s ease;
 }
 
-.card-body {
-  padding: 20px;
+.gallery-img:hover {
+  transform: scale(1.05);
+}
+
+.uniform-size {
+  max-height: 500px; /* Ajusta esta altura según sea necesario */
+  width: auto;
 }
 
 footer {

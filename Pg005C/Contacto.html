@@ -4,20 +4,30 @@
 <div class="container-lg">
   <div class="card border-0 shadow my-2 bg-light border-info mb-3" style="width: 50%; margin: 0 auto 10px;">
     <div class="card-body">
-      <form id="formularioAdopcion">
+      <form id="formularioAdopcion" novalidate>
         <label for="nombre">Nombre:</label>
-        <input type="text" id="nombre" name="nombre" required>
+        <input type="text" id="nombre" name="nombre" class="form-control" required>
 
-        <label for="correo">Correo electrónico:</label>
-        <input type="email" id="correo" name="correo" required>
+        <label for="apellidos">Apellidos:</label>
+        <input type="text" id="apellidos" name="apellidos" class="form-control" required>
 
         <label for="telefono">Teléfono:</label>
-        <input type="tel" id="telefono" name="telefono" pattern="[0-9]{9,}" required>
+        <input type="tel" id="telefono" name="telefono" class="form-control" pattern="^[0-9]{9}$" required>
+        <small class="form-text text-muted">Debe contener exactamente 9 dígitos.</small>
 
-        <label for="comentario">Mensaje:</label>
-        <textarea id="comentario" name="comentario" required></textarea>
+        <label for="correo">Correo electrónico:</label>
+        <input type="email" id="correo" name="correo" class="form-control" required>
 
-        <input type="submit" value="Enviar">
+        <label for="direccion">Dirección:</label>
+        <input type="text" id="direccion" name="direccion" class="form-control" required>
+
+        <label for="region">Región:</label>
+        <input type="text" id="region" name="region" class="form-control" required>
+
+        <label for="comuna">Comuna:</label>
+        <input type="text" id="comuna" name="comuna" class="form-control" required>
+
+        <input type="submit" value="Enviar" class="btn btn-primary mt-3">
       </form>
       
       <div id="mensajeRegistro" style="display: none;">
