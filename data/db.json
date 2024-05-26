@@ -4,73 +4,85 @@
         "id": 1,
         "image": "https://i.ibb.co/Fxh5wfp/ventacorrea1.png",
         "name": "Correa 1",
-        "description": "Añade estilo y seguridad a tus paseos con nuestra Correa 1. Hecha con materiales duraderos y un diseño moderno."
+        "description": "Añade estilo y seguridad a tus paseos con nuestra Correa 1. Hecha con materiales duraderos y un diseño moderno.",
+        "category":"Correa"
       },
       {
         "id": 2,
         "image": "https://i.ibb.co/QcZtg5k/ventabandana2.png",
         "name": "Bandana 2",
-        "description": "Destaca la personalidad de tu mascota con la Bandana 2. Perfecta para cualquier ocasión, cómoda y elegante."
+        "description": "Destaca la personalidad de tu mascota con la Bandana 2. Perfecta para cualquier ocasión, cómoda y elegante.",
+        "category":"Bandana"
       },
       {
         "id": 3,
         "image": "https://i.ibb.co/v3NLbqS/ventaidentificador3.png",
         "name": "Identificador 3",
-        "description": "Mantén a tu mascota siempre identificada con nuestro Identificador . Diseño resistente y personalizable."
+        "description": "Mantén a tu mascota siempre identificada con nuestro Identificador . Diseño resistente y personalizable.",
+        "category":"Identificador"
       },
       {
         "id": 4,
         "image": "https://i.ibb.co/3Ss84Bt/Bandanas.png",
         "name": "Bandana",
-        "description": "Dale un toque especial a tu mascota con esta Bandana única. Ideal para paseos y eventos especiales."
+        "description": "Dale un toque especial a tu mascota con esta Bandana única. Ideal para paseos y eventos especiales.",
+        "category":"Bandana"
       },
       {
         "id": 5,
         "image": "https://i.ibb.co/9yHQVTY/collar.png",
         "name": "Collar",
-        "description": "Nuestro Collar ofrece comodidad y estilo en uno. Fabricado con materiales de alta calidad para máxima durabilidad."
+        "description": "Nuestro Collar ofrece comodidad y estilo en uno. Fabricado con materiales de alta calidad para máxima durabilidad.",
+        "category":"Correa"
       },
       {
         "id": 6,
         "image": "https://i.ibb.co/bBVshz5/correablack.png",
         "name": "Correa Black",
-        "description": "La Correa Black combina elegancia y funcionalidad. Perfecta para un control seguro y un look sofisticado."
+        "description": "La Correa Black combina elegancia y funcionalidad. Perfecta para un control seguro y un look sofisticado.",
+        "category":"Correa"
       },
       {
         "id": 7,
         "image": "https://i.ibb.co/hHQpvvs/correaamorypaz.png",
         "name": "Correa Amor y Paz",
-        "description": "Expresa tu amor por tu mascota con la Correa Amor y Paz. Un diseño encantador que refleja paz y armonía."
+        "description": "Expresa tu amor por tu mascota con la Correa Amor y Paz. Un diseño encantador que refleja paz y armonía.",
+        "category":"Correa"
       },
       {
         "id": 8,
         "image": "https://i.ibb.co/wWbKyLT/correagreen.png",
         "name": "Correa Green",
-        "description": "La Correa Green es perfecta para los amantes de la naturaleza. Resistente, cómoda y con un diseño fresco y natural."
+        "description": "La Correa Green es perfecta para los amantes de la naturaleza. Resistente, cómoda y con un diseño fresco y natural.",
+        "category":"Correa"
       },
       {
         "id": 9,
         "image": "https://i.ibb.co/km1rj9D/huesitopink.png",
         "name": "Huesito Pink",
-        "description": "Añade un toque de diversión con el Huesito Pink. Ideal para juegos y entrenamiento, con un color vibrante y atractivo."
+        "description": "Añade un toque de diversión con el Huesito Pink. Ideal para juegos y entrenamiento, con un color vibrante y atractivo.",
+        "category":"Identificador"
       },
       {
         "id": 10,
         "image": "https://i.ibb.co/Csbv6Gg/bandanadragon.png",
         "name": "Bandana Dragon",
-        "description": "Inspira fuerza y poder con la Bandana Dragon. Perfecta para mascotas valientes y llenas de energía."
+        "description": "Inspira fuerza y poder con la Bandana Dragon. Perfecta para mascotas valientes y llenas de energía.",
+        "category":"Bandana"
       },
       {
         "id": 11,
         "image": "https://i.ibb.co/bB6HZtM/bandanawarrior.png",
         "name": "Bandana Warrior",
-        "description": "La Bandana Warrior es para los verdaderos guerreros. Un diseño audaz y resistente, perfecto para cualquier aventura."
+        "description": "La Bandana Warrior es para los verdaderos guerreros. Un diseño audaz y resistente, perfecto para cualquier aventura.",
+        "category":"Bandana"
       },
       {
         "id": 12,
         "image": "https://i.ibb.co/r3rt2Fn/identificadotstar.png",
         "name": "Identificador Star",
-        "description": "Mantén a tu mascota segura y con estilo con el Identificador Star. Personalizable y resistente, un accesorio imprescindible."
+        "description": "Mantén a tu mascota segura y con estilo con el Identificador Star. Personalizable y resistente, un accesorio imprescindible.",
+        "category":"Identificador"
       }
     ]
   }
