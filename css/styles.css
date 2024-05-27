@@ -71,7 +71,7 @@ body {
 }
 
 .uniform-size {
-  max-height: 500px; /* Ajusta esta altura según sea necesario */
+  max-height: 500px; / Ajusta esta altura según sea necesario /
   width: auto;
 }
 
@@ -84,7 +84,7 @@ footer {
 .creador img {
   display: block;
   margin: 0 auto 10px;
-  width: 150px; /* Ajusta el tamaño según sea necesario */
+  width: 150px; / Ajusta el tamaño según sea necesario /
   height: auto;
 }
 
@@ -177,42 +177,25 @@ header {
 .uniform-size {
   width: 100%;
   height: auto;
-  max-height: 400px; /* Ajusta este valor según sea necesario */
+  max-height: 800px; / Ajusta este valor según sea necesario /
   object-fit: cover;
 }
 
 .uniform-img {
   width: 100%;
-  height: 200px; /* Ajusta esta altura según sea necesario */
+  height: auto; / Ajusta esta altura según sea necesario */
   object-fit: cover;
 }
 
-/* Estilos para el menú lateral */
-.sidebar {
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  z-index: 1000;
-  padding: 48px 0 0; /* Altura del navbar */
-  box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);
+#category-filter .list-group-item {
+  cursor: pointer;
 }
 
-.sidebar-sticky {
-  position: -webkit-sticky;
-  position: sticky;
-  top: 0;
-  height: calc(100vh - 48px);
-  padding-top: 0.5rem;
-  overflow-x: hidden;
-  overflow-y: auto; /* Permitir desplazamiento */
+#category-filter .list-group-item:hover,
+#category-filter .list-group-item.active {
+  background-color: #007bff;
+  color: white;
 }
-
-.sidebar .nav-link {
-  font-weight: 500;
-  color: #333;
-}
-
-.sidebar .nav-link:hover {
-  color: #007bff;
-}
+﻿
+zangetsu
+zangetsu9270
