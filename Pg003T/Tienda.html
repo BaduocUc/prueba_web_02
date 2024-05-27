@@ -1,26 +1,39 @@
 <header>
     <h1>Productos para Mascotas</h1>
-  </header>
-  <div class="container-fluid">
+</header>
+<div class="container-fluid pt-3">
     <div class="row">
-      <nav class="col-md-2 d-none d-md-block bg-light sidebar">
-        <div class="sidebar-sticky">
-          <ul class="nav flex-column" id="category-list">
-            <!-- Categorías cargadas dinámicamente -->
-          </ul>
+        <div class="col-md-2">
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                  <h5 class="card-title">Filtrar por Categoría</h5>
+                  <form id="filter-form">
+                    <!-- Las categorías se cargarán aquí dinámicamente -->
+                </form>
+                <button id="apply-filter" class="btn btn-primary mt-3">Aplicar Filtro</button>
+                </div>
+              </div>
         </div>
-      </nav>
-      <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
-        <div id="product-container" class="row">
-          <!-- Productos cargados dinámicamente -->
+        <div class="col">
+            <div class="row" id="product-container">
+                <!-- Los productos se cargarán aquí dinámicamente -->
+            </div>
         </div>
-        <div id="product-details" style="display: none;">
-          <!-- Detalles del producto seleccionado -->
-          <button id="back-to-products" class="btn btn-secondary">Volver a los productos</button>
-          <h2 id="product-name"></h2>
-          <img id="product-image" src="" alt="" class="img-fluid">
-          <p id="product-description"></p>
-        </div>
-      </main>
     </div>
-  </div>
+</div>
+
+<!-- Modal para la imagen ampliada -->
+<div class="modal fade" id="productModal" tabindex="-1" aria-labelledby="productModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="productModalLabel">Título del Producto</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body text-center">
+                <img id="modalImage" src="" alt="" class="img-fluid uniform-size">
+                <p id="modalDescription" class="mt-3"></p>
+            </div>
+        </div>
+    </div>
+</div>
