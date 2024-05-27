@@ -35,8 +35,9 @@ document.addEventListener('DOMContentLoaded', function () {
           loadFoundations();
         }
         // Cargar datos dinámicos si es la página de tienda
-        if (page === 'Pg005T/Tienda.html') {
+        if (page === 'Pg003T/Tienda.html') {
           loadCategories();
+          loadProducts();
         }
       })
       .catch(error => {
@@ -56,23 +57,30 @@ document.addEventListener('DOMContentLoaded', function () {
       })
       .then(data => {
         const categories = [...new Set(data.products.map(product => product.category))];
-        const categoryList = document.getElementById('category-list');
-        categoryList.innerHTML = ''; // Limpiar el contenedor antes de agregar nuevo contenido
+        const categoryFilter = document.getElementById('filter-form');
+        categoryFilter.innerHTML = ''; // Limpiar el contenedor antes de agregar nuevo contenido
         categories.forEach(category => {
-          const categoryItem = `<li class="nav-item"><a class="nav-link" href="#" data-category="${category}">${category}</a></li>`;
-          categoryList.innerHTML += categoryItem;
+          const categoryItem = `
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="${category}" id="category-${category}">
+              <label class="form-check-label" for="category-${category}">
+                ${category}
+              </label>
+            </div>
+          `;
+          categoryFilter.innerHTML += categoryItem;
         });
 
-        // Asignar eventos a las categorías
-        assignCategoryEvents();
+        // Asignar evento al botón de aplicar filtro
+        document.getElementById('apply-filter').addEventListener('click', applyFilter);
       })
       .catch(error => {
         console.error('Error al cargar los datos de las categorías:', error);
       });
   }
 
-  // Función para cargar los productos de una categoría
-  function loadProducts(category) {
+  // Función para cargar los productos
+  function loadProducts(categories = []) {
     fetch('data/db.json')
       .then(response => {
         if (!response.ok) {
@@ -83,82 +91,57 @@ document.addEventListener('DOMContentLoaded', function () {
       .then(data => {
         const productContainer = document.getElementById('product-container');
         productContainer.innerHTML = ''; // Limpiar el contenedor antes de agregar nuevo contenido
-        data.products
-          .filter(product => product.category === category)
-          .forEach(product => {
-            const productCard = `
-              <div class="col-md-4 mb-4">
-                <div class="card">
-                  <img src="${product.image}" alt="${product.name}" class="card-img-top">
-                  <div class="card-body">
-                    <h5 class="card-title">${product.name}</h5>
-                    <p class="card-text">${product.description}</p>
-                    <button class="btn btn-primary" data-id="${product.id}">Ver Detalles</button>
-                  </div>
-                </div>
+        const filteredProducts = categories.length > 0 
+          ? data.products.filter(product => categories.includes(product.category)) 
+          : data.products;
+        filteredProducts.forEach(product => {
+          const productCard = `
+            <div class="col-md-4 mb-4">
+              <div class="gallery-item">
+                <img src="${product.image}" alt="${product.name}" class="img-fluid gallery-img uniform-img" data-description="${product.description}">
               </div>
-            `;
-            productContainer.innerHTML += productCard;
-          });
+            </div>
+          `;
+          productContainer.innerHTML += productCard;
+        });
 
-        // Asignar eventos a los botones de "Ver Detalles"
-        assignProductEvents();
+        // Asignar eventos a las imágenes de la galería
+        assignGalleryEvents();
       })
       .catch(error => {
         console.error('Error al cargar los datos de los productos:', error);
       });
   }
 
-  // Función para mostrar los detalles de un producto
-  function showProductDetails(productId) {
-    fetch('data/db.json')
-      .then(response => {
-        if (!response.ok) {
-          throw new Error('Error al cargar los datos del producto');
-        }
-        return response.json();
-      })
-      .then(data => {
-        const product = data.products.find(p => p.id === parseInt(productId));
-        if (product) {
-          document.getElementById('product-name').textContent = product.name;
-          document.getElementById('product-image').src = product.image;
-          document.getElementById('product-image').alt = product.name;
-          document.getElementById('product-description').textContent = product.description;
-          document.getElementById('product-details').style.display = 'block';
-          document.getElementById('product-container').style.display = 'none';
-        }
-      })
-      .catch(error => {
-        console.error('Error al cargar los datos del producto:', error);
-      });
+  // Función para aplicar el filtro de categorías
+  function applyFilter() {
+    const selectedCategories = [];
+    document.querySelectorAll('#filter-form .form-check-input:checked').forEach(checkbox => {
+      selectedCategories.push(checkbox.value);
+    });
+    loadProducts(selectedCategories);
   }
 
-  // Función para asignar eventos a las categorías
-  function assignCategoryEvents() {
-    const categoryLinks = document.querySelectorAll('#category-list .nav-link');
-    categoryLinks.forEach(link => {
-      link.addEventListener('click', function (event) {
-        event.preventDefault();
-        const category = this.getAttribute('data-category');
-        loadProducts(category);
-      });
-    });
-  }
+  // Función para asignar eventos a las imágenes de la galería
+  function assignGalleryEvents() {
+    const galleryImages = document.querySelectorAll('.gallery-img');
+    const modalImage = document.getElementById('modalImage');
+    const modalDescription = document.getElementById('modalDescription');
+    const imageModalLabel = document.getElementById('productModalLabel');
 
-  // Función para asignar eventos a los productos
-  function assignProductEvents() {
-    const productButtons = document.querySelectorAll('.btn-primary[data-id]');
-    productButtons.forEach(button => {
-      button.addEventListener('click', function () {
-        const productId = this.getAttribute('data-id');
-        showProductDetails(productId);
-      });
-    });
+    galleryImages.forEach(image => {
+      image.addEventListener('click', function () {
+        const imgSrc = this.src;
+        const imgAlt = this.alt;
+        const imgDescription = this.getAttribute('data-description');
 
-    document.getElementById('back-to-products').addEventListener('click', function () {
-      document.getElementById('product-details').style.display = 'none';
-      document.getElementById('product-container').style.display = 'block';
+        modalImage.src = imgSrc;
+        imageModalLabel.textContent = imgAlt;
+        modalDescription.textContent = imgDescription;
+
+        const productModal = new bootstrap.Modal(document.getElementById('productModal'));
+        productModal.show();
+      });
     });
   }
 
@@ -214,32 +197,6 @@ document.addEventListener('DOMContentLoaded', function () {
         event.preventDefault();
         const page = this.getAttribute('href');
         loadPage(page);
-      });
-    });
-  }
-
-  // Función para asignar eventos a las imágenes de la galería
-  function assignGalleryEvents() {
-    const galleryImages = document.querySelectorAll('.gallery-img');
-    const modalImage = document.getElementById('modalImage');
-    const modalDescription = document.getElementById('modalDescription');
-    const imageModalLabel = document.getElementById('imageModalLabel');
-    const modalLink = document.getElementById('modalLink');
-
-    galleryImages.forEach(image => {
-      image.addEventListener('click', function () {
-        const imgSrc = this.src;
-        const imgAlt = this.alt;
-        const imgDescription = this.getAttribute('data-description');
-        const imgLink = this.getAttribute('data-link');
-
-        modalImage.src = imgSrc;
-        imageModalLabel.textContent = imgAlt;
-        modalDescription.textContent = imgDescription;
-        modalLink.href = imgLink;
-
-        const imageModal = new bootstrap.Modal(document.getElementById('imageModal'));
-        imageModal.show();
       });
     });
   }
