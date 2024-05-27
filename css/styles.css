@@ -71,7 +71,7 @@ body {
 }
 
 .uniform-size {
-  max-height: 500px; / Ajusta esta altura según sea necesario /
+  max-height: 500px; /* Ajusta esta altura según sea necesario */
   width: auto;
 }
 
@@ -84,7 +84,7 @@ footer {
 .creador img {
   display: block;
   margin: 0 auto 10px;
-  width: 150px; / Ajusta el tamaño según sea necesario /
+  width: 150px; /* Ajusta el tamaño según sea necesario */
   height: auto;
 }
 
@@ -177,13 +177,13 @@ header {
 .uniform-size {
   width: 100%;
   height: auto;
-  max-height: 800px; / Ajusta este valor según sea necesario /
+  max-height: 400px; /* Ajusta este valor según sea necesario */
   object-fit: cover;
 }
 
 .uniform-img {
   width: 100%;
-  height: auto; / Ajusta esta altura según sea necesario */
+  height: 200px; /* Ajusta esta altura según sea necesario */
   object-fit: cover;
 }
 
@@ -196,6 +196,3 @@ header {
   background-color: #007bff;
   color: white;
 }
-﻿
-zangetsu
-zangetsu9270
